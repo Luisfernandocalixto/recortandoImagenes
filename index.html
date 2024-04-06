@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recortando imágenes</title>
+    <link rel="shortcut icon" href="./img/undraw_moments_0y20.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Para el editor usaremos croppr.js, importamos sus CDNs -->
+    <script src="https://cdn.jsdelivr.net/gh/jamesssooi/Croppr.js@2.3.0/dist/croppr.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/jamesssooi/Croppr.js@2.3.0/dist/croppr.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <!-- fonst -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>unImage
+                <img width="40" src="./img/undraw_moments_0y20.svg" alt="Logo" title="Logo">
+            </h1>
+
+        </div>
+        <div>
+            <img src="./img/avataaars.svg" alt="Avatar" title="Avatar">
+
+        </div>
+    </header>
+
+    <main class="">
+        <div class="">
+            <h1 class="title">Selecciona tu imagen y recorta...</h1>
+
+        </div>
+        <div class="">
+            <img class="image" src="./img/unDrawPlus_1712366214221_mq0wdt.webp" alt="Imagen recortada">
+        </div>
+    </main>
+
+
+    <form action="" id="form" name="form">
+        <div class="">
+            <h1>1- Introduce tu imagen</h1>
+            <br>
+            <!-- Input file donde se adjunta la imagen -->
+            <input type="file" id="image" accept=".png, .jpg, jpeg" required>
+        </div>
+
+        <div class="">
+            <h1>2- Recorta</h1>
+            <!-- Editor donde se recortará la imagen con la ayuda de croppr.js -->
+            <div id="editor"></div>
+        </div>
+
+        <div class="">
+            <h1>3- Previsualiza el resultado</h1>
+            <!-- Previa del recorte -->
+            <canvas id="preview"></canvas>
+        </div>
+
+        <div class="">
+            <h1>4- Descarga tu imagen</h1>
+            <br>
+            <!-- Muestra de la imagen recortada en Base64 -->
+            <a id="base"><button type="submit"> Descargar imagen </button> </a>
+            <br>
+        </div>
+    </form>
+
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
