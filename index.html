@@ -58,13 +58,13 @@
             <input type="file" id="image" accept=".png, .jpg, jpeg" required>
         </div>
 
-        <div class="">
+        <div class="baseEditor">
             <h1>2- Recorta</h1>
             <!-- Editor donde se recortará la imagen con la ayuda de croppr.js -->
             <div id="editor"></div>
         </div>
 
-        <div class="">
+        <div class="basePreview">
             <h1>3- Previsualiza el resultado</h1>
             <!-- Previa del recorte -->
             <canvas id="preview"></canvas>
@@ -74,7 +74,9 @@
             <h1>4- Descarga tu imagen</h1>
             <br>
             <!-- Muestra de la imagen recortada en Base64 -->
-            <a id="base"><button type="submit"> Descargar imagen </button> </a>
+            <div>
+                <a id="base"><button type="submit"> Descargar imagen </button> </a>
+            </div>
             <br>
         </div>
     </form>
