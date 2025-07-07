@@ -9,6 +9,7 @@
     <meta property="og:url" content="https://unimage.netlify.app">
     <meta property="og:image" content="/img/unDrawPlus_1712366214221_mq0wdt.webp">
     <meta property="og:description" content="Recorta imagenes de forma fácil y sencilla">
+    <meta name="description" content="Recorta imagenes de forma fácil y sencilla">
     <title>Recortando imágenes</title>
     <link rel="shortcut icon" href="./img/undraw_moments_0y20.svg" type="image/x-icon">
     <link rel="stylesheet" href="/css/styles.css">
@@ -16,11 +17,9 @@
     <script src="./js/croppr.min.js"></script>
     <link href="./css/croppr.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/jquery-ui.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="./js/jquery.js"></script>
     <script src="./js/jquery-ui.js"></script>
     <!-- fonst -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="./css/font.css" rel="stylesheet">
 
 </head>
@@ -53,7 +52,6 @@
     <form action="" id="form" name="form">
         <div class="">
             <h1>1- Introduce tu imagen</h1>
-            <br>
             <!-- Input file donde se adjunta la imagen -->
             <input type="file" id="image" accept=".png, .jpg, jpeg" required>
         </div>
@@ -72,12 +70,10 @@
 
         <div class="">
             <h1>4- Descarga tu imagen</h1>
-            <br>
             <!-- Muestra de la imagen recortada en Base64 -->
             <div>
                 <a id="base"><button type="submit"> Descargar imagen </button> </a>
             </div>
-            <br>
         </div>
     </form>
 
