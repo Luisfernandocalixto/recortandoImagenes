@@ -2,79 +2,77 @@ document.addEventListener('DOMContentLoaded', () => {
     // Input file
     const inputImage = document.querySelector("#image");
 
-    // Nodo donde estara el editor
+    // Node where instance  the editor of image
     const editor = document.querySelector("#editor");
 
-    // El canvas donde se mostrara la previa
+    // The canvas where show  preview image
     const miCanvas = document.querySelector("#preview");
-    //Contexto del canvas
-    const contexto = miCanvas.getContext("2d");
+    //Context of canvas
+    const contextOfCanvas = miCanvas.getContext("2d");
 
-    //Ruta de la imagen seleccionada
-    let urlImage = undefined
+    //Route of image selected
+    let urlImage
 
-    inputImage.addEventListener('change', abrirEditor, false);
+    inputImage.addEventListener('change', openEditor, false);
 
-    let descargar = document.querySelector("#base");
+    let isDownload = document.querySelector("#base");
     document.getElementById('base').style.display = "none"
-    descargar.addEventListener('click', function () {
-        descargar.download = "imagen_recortada." + "jpg";
-        descargar.href = miCanvas.toDataURL("image/jpeg", 1);
-        descargar.click();
+    isDownload.addEventListener('click', function () {
+        isDownload.download = "imagen_recortada." + "jpg";
+        isDownload.href = miCanvas.toDataURL("image/jpeg", 1);
+        isDownload.click();
 
     })
 
 
-    // Function para abrir la imagen seleccionada
+    // Function for open  image selected
 
-    function abrirEditor(e) {
+    function openEditor(e) {
 
-        // obtener la imagen
+        // obtain the image
         urlImage = URL.createObjectURL(e.target.files[0]);
         console.log(e.target.files[0]);
-        // Borrar editor en caso que existiera una imagen previa
+        // Erase editor in case that exist a image preview
         editor.innerHTML = '';
 
-        let cropprImg = document.createElement("img");
-        cropprImg.setAttribute("id", 'croppr');
-        editor.appendChild(cropprImg);
-        //Limpiar la previa en caso  que existiera algún elemento previo
-        contexto.clearRect(0, 0, miCanvas.width, miCanvas.height);
+        let cropperImg = document.createElement("img");
+        cropperImg.setAttribute("id", 'croppr');
+        editor.appendChild(cropperImg);
+        //Clean the preview in case  that exists some element preview
+        contextOfCanvas.clearRect(0, 0, miCanvas.width, miCanvas.height);
 
-        // Enviar la imagen para su recorte
+        // Send the image for your  resize
         document.querySelector("#croppr").setAttribute('src', urlImage);
 
         new Croppr('#croppr', {
             aspectRatio: 1,
             startSize: [70, 70],
-            onCropEnd: recortarImagen,
+            onCropEnd: resizeImage,
         })
         document.getElementById('base').style.display = "block"
     }
 
-    // Recortar la imagen 
-    function recortarImagen(data) {
-        const inicioX = data.x;
-        const inicioY = data.y;
+    // Resize the image 
+    function resizeImage(data) {
+        const startX = data.x;
+        const startY = data.y;
 
-        const nuevoAncho = data.width;
-        const nuevaAltura = data.height;
+        const newWidth = data.width;
+        const newHeight = data.height;
         const zoom = 1;
-        let imagenEn64 = '';
 
-        miCanvas.width = nuevoAncho;
-        miCanvas.height = nuevaAltura;
+        miCanvas.width = newWidth;
+        miCanvas.height = newHeight;
 
-        let miNuevaImagenTemp = new Image();
+        let myNewImageTemp = new Image();
 
-        miNuevaImagenTemp.onload = function () {
-            contexto.drawImage(miNuevaImagenTemp, inicioX, inicioY, nuevoAncho * zoom, nuevaAltura * zoom, 0, 0, nuevoAncho, nuevaAltura);
+        myNewImageTemp.onload = function () {
+            contextOfCanvas.drawImage(myNewImageTemp, startX, startY, newWidth * zoom, newHeight * zoom, 0, 0, newWidth, newHeight);
 
-            imagenEn64 = miCanvas.toDataURL("image/jpeg");
 
         }
 
-        miNuevaImagenTemp.src = urlImage;
+        myNewImageTemp.src = urlImage;
     }
 
 });

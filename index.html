@@ -13,13 +13,10 @@
     <title>Recortando imágenes</title>
     <link rel="shortcut icon" href="./img/undraw_moments_0y20.svg" type="image/x-icon">
     <link rel="stylesheet" href="/css/styles.css">
-    <!-- Para el editor usaremos croppr.js, importamos sus CDNs -->
-    <script src="./js/croppr.min.js"></script>
+    <!-- For editor importation styles of cropper -->
     <link href="./css/croppr.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./css/jquery-ui.css" rel="stylesheet">
-    <script src="./js/jquery.js"></script>
-    <script src="./js/jquery-ui.js"></script>
-    <!-- fonst -->
+    <!-- font -->
     <link href="./css/font.css" rel="stylesheet">
 
 </head>
@@ -52,31 +49,34 @@
     <form action="" id="form" name="form">
         <div class="">
             <h1>1- Introduce tu imagen</h1>
-            <!-- Input file donde se adjunta la imagen -->
+            <!-- Input file where push image -->
             <input type="file" id="image" accept=".png, .jpg, jpeg" required>
         </div>
 
         <div class="baseEditor">
             <h1>2- Recorta</h1>
-            <!-- Editor donde se recortará la imagen con la ayuda de croppr.js -->
+            <!-- Editor where  resize the image with  help of cropper.js -->
             <div id="editor"></div>
         </div>
 
         <div class="basePreview">
             <h1>3- Previsualiza el resultado</h1>
-            <!-- Previa del recorte -->
+            <!-- Preview of image resized -->
             <canvas id="preview"></canvas>
         </div>
 
         <div class="">
             <h1>4- Descarga tu imagen</h1>
-            <!-- Muestra de la imagen recortada en Base64 -->
+            <!-- Show image resized in base64 -->
             <div>
                 <a id="base"><button type="submit"> Descargar imagen </button> </a>
             </div>
         </div>
     </form>
 
+    <script src="./js/croppr.min.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery-ui.js"></script>
     <script src="/js/app.js"></script>
 </body>
 
