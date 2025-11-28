@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isDownload.href = miCanvas.toDataURL("image/jpeg", 1);
         isDownload.click();
 
-    })
+    });
 
 
     // Function for open  image selected
@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // obtain the image
         urlImage = URL.createObjectURL(e.target.files[0]);
-        console.log(e.target.files[0]);
         // Erase editor in case that exist a image preview
         editor.innerHTML = '';
 
@@ -43,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Send the image for your  resize
         document.querySelector("#croppr").setAttribute('src', urlImage);
+        UIkit.modal("#modal-full").show();
 
         new Croppr('#croppr', {
             aspectRatio: 1,

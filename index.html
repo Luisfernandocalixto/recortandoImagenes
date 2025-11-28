@@ -14,8 +14,8 @@
     <link rel="shortcut icon" href="./img/undraw_moments_0y20.svg" type="image/x-icon">
     <link rel="stylesheet" href="/css/styles.css">
     <!-- For editor importation styles of cropper -->
-    <link href="./css/croppr.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./css/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/croppr.min.css" />
+    <link rel="stylesheet" href="./css/jquery-ui.css">
     <!-- font -->
     <link href="./css/font.css" rel="stylesheet">
 
@@ -35,49 +35,56 @@
         </div>
     </header>
 
-    <main class="">
-        <div class="">
+    <main>
+        <div>
             <h1 class="title">Selecciona tu imagen y recorta...</h1>
 
         </div>
-        <div class="">
-            <img class="image" src="./img/unDrawPlus_1712366214221_mq0wdt.webp" alt="Imagen recortada">
+        <div>
+            <img class="image" src="./img/unDrawPlus_1712366214221_mq0wdtresize.webp" alt="example">
         </div>
     </main>-
 
 
-    <form action="" id="form" name="form">
-        <div class="">
-            <h1>1- Introduce tu imagen</h1>
+    <form id="form" name="form">
+        <div class="contentInputByImage">
+            <Label for="image">Introduce tu imagen</Label>
             <!-- Input file where push image -->
             <input type="file" id="image" accept=".png, .jpg, jpeg" required>
         </div>
 
-        <div class="baseEditor">
-            <h1>2- Recorta</h1>
-            <!-- Editor where  resize the image with  help of cropper.js -->
-            <div id="editor"></div>
-        </div>
 
-        <div class="basePreview">
-            <h1>3- Previsualiza el resultado</h1>
-            <!-- Preview of image resized -->
-            <canvas id="preview"></canvas>
-        </div>
+        <div id="modal-full" class="uk-modal-full" uk-modal>
+            <div class="uk-modal-dialog">
+                <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+                    <div class="uk-background-cover uk-padding-large">
+                        <h1>Recorta</h1>
+                        <!-- Editor where  resize the image with  help of cropper.js -->
+                        <div id="editor"></div>
 
-        <div class="">
-            <h1>4- Descarga tu imagen</h1>
-            <!-- Show image resized in base64 -->
-            <div>
-                <a id="base"><button type="submit"> Descargar imagen </button> </a>
+                    </div>
+                    <div class="uk-padding-large">
+                        <h1>Previsualiza el resultado</h1>
+                        <!-- Preview of image resized -->
+                        <canvas id="preview"></canvas>
+                    </div>
+                </div>
+                <div align="center">
+                    <a id="base"><button type="submit"> Descargar imagen </button> </a>
+                </div>
             </div>
         </div>
+
+
+
     </form>
 
     <script src="./js/croppr.min.js"></script>
     <script src="./js/jquery.js"></script>
     <script src="./js/jquery-ui.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/uikit.min.js"></script>
 </body>
 
 </html>
