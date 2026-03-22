@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contextOfCanvas = miCanvas.getContext("2d");
 
     //Route of image selected
-    let urlImage
+    let urlImage;
 
     inputImage.addEventListener('change', openEditor, false);
 
@@ -20,7 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
     isDownload.addEventListener('click', function () {
         isDownload.download = "imagen_recortada." + "jpg";
         isDownload.href = miCanvas.toDataURL("image/jpeg", 1);
-        isDownload.click();
+        isDownload.click();        
+        setTimeout(() => {
+            inputImage.setAttribute("value","");
+        },2000)
 
     });
 
@@ -49,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             startSize: [70, 70],
             onCropEnd: resizeImage,
         })
-        document.getElementById('base').style.display = "block"
+        document.getElementById('base').style.display = "block";
     }
 
     // Resize the image 

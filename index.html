@@ -7,7 +7,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Recorta imagenes online">
     <meta property="og:url" content="https://unimage.netlify.app">
-    <meta property="og:image" content="/img/unDrawPlus_1712366214221_mq0wdt.webp">
+    <meta property="og:image" content="https://unimage.netlify.app/img/unDrawPlus_1712366214221_mq0wdt.webp">
     <meta property="og:description" content="Recorta imagenes de forma fácil y sencilla">
     <meta name="description" content="Recorta imagenes de forma fácil y sencilla">
     <title>Recortando imágenes</title>
@@ -41,9 +41,10 @@
 
         </div>
         <div>
-            <img class="image" src="./img/unDrawPlus_1712366214221_mq0wdtresize.webp" alt="example">
+            <img class="image" width="100%" height="300px" src="./img/unDrawPlus_1712366214221_mq0wdtresize.webp"
+                alt="example">
         </div>
-    </main>-
+    </main>
 
 
     <form id="form" name="form">
@@ -57,7 +58,7 @@
         <div id="modal-full" class="uk-modal-full" uk-modal>
             <div class="uk-modal-dialog">
                 <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
-                <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+                <div id="isGridAuto" class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
                     <div class="uk-background-cover uk-padding-large">
                         <h1>Recorta</h1>
                         <!-- Editor where  resize the image with  help of cropper.js -->
@@ -72,6 +73,7 @@
                 </div>
                 <div align="center">
                     <a id="base"><button type="submit"> Descargar imagen </button> </a>
+                    <br>
                 </div>
             </div>
         </div>
